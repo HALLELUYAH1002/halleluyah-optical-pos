@@ -45,3 +45,7 @@ python run.py
 - For local testing, it falls back to SQLite.
 - Manager can export sales data as CSV from the navbar.
 - Sales page supports unlimited rows with dynamic item addition in the browser.
+
+
+## Render Python version
+This project pins Render to Python 3.11.11 using both `.python-version` and the `PYTHON_VERSION` environment variable in `render.yaml`. If Render cached an older build, use **Manual Deploy -> Clear build cache & deploy**.
