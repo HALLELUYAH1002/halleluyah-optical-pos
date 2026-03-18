@@ -1,0 +1,20 @@
+services:
+  - type: web
+    name: halleluyah-optical-lab-pos
+    env: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn run:app
+    envVars:
+      - key: SECRET_KEY
+        generateValue: true
+      - key: DEFAULT_MANAGER_PASSWORD
+        value: admin1234
+      - key: DATABASE_URL
+        fromDatabase:
+          name: hol-pos-db
+          property: connectionString
+
+databases:
+  - name: hol-pos-db
+    plan: free
